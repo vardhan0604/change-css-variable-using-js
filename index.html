@@ -12,27 +12,42 @@
     <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
     <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+    <input id="blur" type="range" name="blur" min="0" max="25" value="0" step="1" data-sizing="px" >
+    <label for="blur">Radius:</label>
+    <input id="blur" type="range" name="radius" min="0" max="50" value="0" step="1" data-sizing="%" >
 
     <label for="base">Base Color</label>
-    <input id="base" type="color" name="base" value="#ffc600">
+    <input id="base" type="color" name="base" value="#F8C8DC">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/600x600">
 
   <style>
-
+    :root{
+        --base: #F8C8DC	;
+        --blur: 0px;
+        --spacing: 40px;
+        --radius:0%;
+    }
     /*
       misc styles, nothing to do with CSS variables
     */
-
+    img{
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+        border-radius: var(--radius);
+    }
+    .hl{
+        color: var(--base);
+    }
     body {
       text-align: center;
       background: #193549;
       color: white;
       font-family: 'helvetica neue', sans-serif;
       font-weight: 100;
-      font-size: 50px;
+      font-size: 24px;
     }
 
     .controls {
@@ -44,7 +59,7 @@
     }
   </style>
 
-  <script>
+  <script src="index.js">
   </script>
 
 </body>
